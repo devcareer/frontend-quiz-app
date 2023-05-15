@@ -13,7 +13,6 @@ html {
 
 body {
   font-family: "Unbounded", cursive;
-  line-height: 1.5;
   padding: 2rem;
 }
 
@@ -29,6 +28,16 @@ body {
   }
 }
 
+a {
+  text-decoration: none;
+}
+
+/* Typography */
+h2,
+p {
+  line-height: 1.5;
+}
+
 h2 {
   font-size: 1.8rem;
   font-weight: 400;
@@ -37,5 +46,32 @@ h2 {
 @media screen and (min-width: 1024px) {
   h2 {
     font-size: 2rem;
+  }
+}
+
+/* Button */
+.btn {
+  border-radius: 2rem;
+  display: block;
+  padding: 0.5rem 3rem;
+  text-align: center;
+}
+
+.btn--container {
+  text-align: center;
+}
+
+.btn--primary {
+  background-color: var(--color-primary);
+}
+
+#next__icon {
+  display: block;
+  margin: auto;
+}
+
+@media screen and (min-width: 1024px) {
+  .btn {
+    display: inline-block;
   }
 }
