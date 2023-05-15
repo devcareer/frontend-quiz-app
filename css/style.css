@@ -1,0 +1,41 @@
+@import url("./normalize.css");
+@import url("https://fonts.googleapis.com/css2?family=Unbounded&display=optional");
+
+:root {
+  --color-primary: #fdbb10;
+}
+
+html {
+  background-color: #fbece4;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Unbounded", cursive;
+  line-height: 1.5;
+  padding: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    padding: 3rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  body {
+    padding: 4rem;
+  }
+}
+
+h2 {
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+
+@media screen and (min-width: 1024px) {
+  h2 {
+    font-size: 2rem;
+  }
+}
