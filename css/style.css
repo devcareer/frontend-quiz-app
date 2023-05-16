@@ -46,14 +46,14 @@ p {
   line-height: 1.5;
 }
 
-h2 {
+p {
+  font-size: 1.6rem;
+}
+
+#question-text {
   color: var(--text-color);
   font-size: 1.8rem;
   font-weight: 400;
-}
-
-p {
-  font-size: 1.6rem;
 }
 
 @media screen and (min-width: 1024px) {
@@ -122,7 +122,7 @@ p {
   z-index: 1;
 }
 
-.choices__label {
+.choices__text {
   line-height: 2.2rem;
 }
 
