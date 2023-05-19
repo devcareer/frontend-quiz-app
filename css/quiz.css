@@ -71,7 +71,7 @@
  }
 
  .btn--container {
-     bottom: 3%;
+     bottom: 2rem !important;
      left: 0;
      position: absolute;
      right: 0;
@@ -80,7 +80,7 @@
  }
 
  .btn--main {
-     bottom: 3%;
+     bottom: 5%;
      left: 0;
      position: absolute;
      right: 0;
@@ -198,4 +198,5 @@
      font-weight: bold;
      font-family: "Unbounded", cursive;
      font-size: 4rem;
+     text-align: center;
  }

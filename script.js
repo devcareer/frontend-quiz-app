@@ -32,7 +32,7 @@ const quizData = [
     id: 3,
     question: "Which one of these is not like the other one?",
     choices: ["Banana", "Dogs", "Monkey", "Cats"],
-    answer: 1,
+    answer: 0,
   },
   {
     id: 4,
@@ -50,7 +50,7 @@ const quizData = [
     id: 6,
     question: "Which one of these is not like the other one?",
     choices: ["Banana", "Dogs", "Monkey", "Cats"],
-    answer: 1,
+    answer: 0,
   },
   {
     id: 7,
@@ -68,7 +68,7 @@ const quizData = [
     id: 9,
     question: "Which one of these is not like the other one?",
     choices: ["Banana", "Dogs", "Monkey", "Cats"],
-    answer: 1,
+    answer: 0,
   },
 ];
 
@@ -84,6 +84,8 @@ function loadQuestion() {
   questionText.textContent = currentQuiz.question;
   questionId.textContent = currentQuiz.id;
 
+  choicesContainer.style.display = "block";
+  summaryContainer.style.display = "none";
   // Update choices
   choices.forEach((choice, index) => {
     const choiceText = choice.querySelector(".choices__text");
@@ -92,11 +94,14 @@ function loadQuestion() {
 }
 
 function handleChoiceSelection(event) {
+  event.stopPropagation();
+
   const selectedChoice = event.target.closest(".choices");
   const currentQuiz = quizData[currentQuestion];
   const selectedAnswer =
     selectedChoice.querySelector(".choices__text").textContent;
 
+  console.log(score);
   if (selectedAnswer === currentQuiz.choices[currentQuiz.answer]) {
     score++;
     console.log(score);
@@ -112,10 +117,12 @@ function handleChoiceSelection(event) {
 
   // Delay before loading the next question
   setTimeout(() => {
-    // console.log(currentQuestion);
+    console.log(currentQuestion);
     currentQuestion++;
+    console.log(currentQuestion);
 
     if (currentQuestion === quizData.length) {
+      selectedChoice.classList.remove("selected");
       showSummaryPage();
     } else if (currentQuestion % 4 === 0 && currentQuestion >= 4) {
       selectedChoice.classList.remove("selected");
@@ -141,14 +148,19 @@ function showSummaryPage() {
   // Update the summary page with the details
   summaryContainer.innerHTML = `You have answered ${score} out of ${currentQuestion} correctly
   `;
-  buttonContainer.onclick = startNewQuiz;
+  if (currentQuestion === quizData.length) {
+    buttonContainer.onclick = startNewQuiz;
+  } else {
+    buttonContainer.onclick = loadQuestion;
+  }
 }
 
 // Function to handle starting a new quiz
 function startNewQuiz() {
   choicesContainer.style.display = "block";
   summaryContainer.style.display = "none";
-  //   currentQuestion = 0;
+  score = 0;
+  currentQuestion = 0;
   loadQuestion();
 }
 
