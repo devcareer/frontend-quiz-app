@@ -1,0 +1,201 @@
+ @import url("./normalize.css");
+ @import url("https://fonts.googleapis.com/css2?family=Unbounded&display=optional");
+
+ :root {
+     --color-primary: #fdbb10;
+     --color-tertiary: #f8f8f8;
+     --text-color: #555;
+ }
+
+ * {
+     box-sizing: border-box;
+     margin: 0;
+     padding: 0;
+ }
+
+ html {
+     background-color: #fbece4;
+     font-size: 62.5%;
+     scroll-behavior: smooth;
+ }
+
+ body {
+     font-family: "Unbounded", cursive;
+     padding: 2rem;
+ }
+
+ @media screen and (min-width: 768px) {
+     body {
+         padding: 3rem;
+     }
+ }
+
+ @media screen and (min-width: 1024px) {
+     body {
+         padding: 4rem;
+     }
+ }
+
+ a {
+     text-decoration: none;
+ }
+
+ /* Typography */
+ h2,
+ p {
+     line-height: 1.5;
+ }
+
+ p {
+     font-size: 1.6rem;
+ }
+
+ #question-text {
+     color: var(--text-color);
+     font-size: 1.8rem;
+     font-weight: 400;
+ }
+
+ @media screen and (min-width: 1024px) {
+     h2 {
+         font-size: 2rem;
+     }
+ }
+
+ /* Button */
+ .btn {
+     border-radius: 2rem;
+     display: block;
+     padding: 0.8rem 3rem;
+     text-align: center;
+ }
+
+ .btn--container {
+     bottom: 3%;
+     left: 0;
+     position: absolute;
+     right: 0;
+     padding: inherit;
+     text-align: center;
+ }
+
+ .btn--main {
+     bottom: 3%;
+     left: 0;
+     position: absolute;
+     right: 0;
+     padding: inherit;
+     text-align: center;
+ }
+
+ .btn--primary {
+     background-color: var(--color-primary);
+ }
+
+ #next__icon {
+     display: block;
+     margin: auto;
+ }
+
+ @media screen and (min-width: 1024px) {
+     .btn {
+         display: inline-block;
+     }
+
+     .btn--container {
+         bottom: 0;
+     }
+ }
+
+ /* Choices */
+ .choices--container {
+     margin-top: 1rem;
+ }
+
+ .choices {
+     align-items: center;
+     border-radius: 0.4rem;
+     box-shadow: 0 2px 6px -2px rgba(0, 0, 0, 0.5);
+     color: var(--text-color);
+     cursor: pointer;
+     display: flex;
+     gap: 2rem;
+     justify-content: space-between;
+     margin-bottom: 0.5rem;
+     padding: 1.5rem;
+     position: relative;
+ }
+
+ .choices:hover {
+     box-shadow: rgba(0, 0, 0, 0.45) 0px 15px 15px -15px;
+     z-index: 1;
+ }
+
+ .choices__text {
+     line-height: 2.2rem;
+ }
+
+ .choices__radio {
+     border: 1px solid #666;
+     border-radius: 1rem;
+     display: inline-block;
+     height: 1rem;
+     padding-left: 0.8rem;
+     position: relative;
+     width: 1rem;
+ }
+
+ .choices__radio::before {
+     background-color: var(--color-tertiary);
+     border-radius: 1rem;
+     bottom: 0;
+     content: "";
+     height: 0.4rem;
+     left: 0;
+     margin: auto;
+     position: absolute;
+     right: 0;
+     top: 0;
+     width: 0.4rem;
+ }
+
+ .default--choices {
+     background-color: var(--color-tertiary);
+ }
+
+ .selected {
+     background-color: var(--color-primary);
+     color: var(--color-tertiary);
+ }
+
+ .selected .choices__radio {
+     border-color: var(--color-tertiary);
+ }
+
+ @media screen and (min-width: 1024px) {
+     .choices {
+         gap: 4rem;
+     }
+ }
+
+ /* Questions-block */
+ .block--questions {
+     margin: 5rem auto;
+     max-width: 70rem;
+ }
+
+ @media screen and (min-width: 1024px) {
+     .block--questions {
+         margin-top: 12.5rem;
+     }
+ }
+
+ #quizPage {
+     display: none;
+ }
+
+ #summary-container {
+     font-weight: bold;
+     font-family: "Unbounded", cursive;
+     font-size: 4rem;
+ }

@@ -1,33 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
-</head>
-<body>
-    <header>
-        <img src="./images/devcareer-logo.png" alt="devCareers logo">
-    </header>
-    <main>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/quiz.css" />
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section class="mainPage" id="mainPage">
+      <header>
+        <img src="./images/devcareer-logo.png" alt="devCareers logo" />
+      </header>
+      <main>
         <div class="top-container">
-            <h1>Multilple Choice</h1>
-            <img src="./images/quizImage.png" alt="An image with quiz written on it">
+          <img
+            src="./images/quizImage.png"
+            alt="An image with quiz written on it"
+          />
         </div>
 
         <div class="instructions">
-            <p class>See how many you can get right. <br /><span>Let's get started.</span></p>
+          <h1>Multilple Choice</h1>
+          <p class>
+            See how many you can get right. <br /><span
+              >Let's get started.</span
+            >
+          </p>
         </div>
-
-        <div class="nextBtn">
-            <span>👉</span>
-            <a href="#">&#8594</a>
+        <div class="btn--main" id="btn--main">
+          <a href="#" class="btn btn--primary"
+            ><svg
+              id="next__icon"
+              fill="white"
+              stroke-width="0"
+              viewBox="0 0 24 24"
+              height="24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
+              ></path>
+            </svg>
+          </a>
         </div>
-    </main>
-</body>
+      </main>
+    </section>
+    <section id="quizPage">
+      <section class="block--questions">
+        <h2 id="question-text"><span id="question-id"></span>&#41;</h2>
+        <div class="choices--container">
+          <div class="choices default--choices">
+            <p class="choices__text"></p>
+            <span class="choices__radio"></span>
+          </div>
+          <div class="choices default--choices">
+            <p class="choices__text"></p>
+            <span class="choices__radio"></span>
+          </div>
+          <div class="choices default--choices">
+            <p class="choices__text"></p>
+            <span class="choices__radio"></span>
+          </div>
+          <div class="choices default--choices">
+            <p class="choices__text"></p>
+            <span class="choices__radio"></span>
+          </div>
+        </div>
+      </section>
+      <!-- Nav button -->
+      <div class="btn--container">
+        <a href="#" class="btn btn--primary"
+          ><svg
+            id="next__icon"
+            fill="white"
+            stroke-width="0"
+            viewBox="0 0 24 24"
+            height="24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
+            ></path>
+          </svg>
+        </a>
+      </div>
+    </section>
+    <section id="summary-container"></section>
+    <script src="./script.js"></script>
+  </body>
 </html>
